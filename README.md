@@ -118,8 +118,11 @@
 The script also includes simulations for error correction codes:
 
    • Surface Code (9 qubits) – most promising for NISQ devices 
+   
    • Steane Code (7 qubits) – first CSS code discovered 
+   
    • Shor Code (9 qubits) – first quantum error correction scheme
+   
 
 📊 Advanced Metrics Calculated
 
