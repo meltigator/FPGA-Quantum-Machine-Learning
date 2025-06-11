@@ -1,3 +1,4 @@
+
 🔮 FPGA Quantum Simulation Features
 
 1. Simulated Quantum Algorithms 
@@ -97,13 +98,10 @@ The script also includes simulations for error correction codes:
 
 # Fidelity calculation (simulation quality)
 FIDELITY = 0.95 - qubits * 0.01 - gates * 0.001
-
 # Decoherence time (microseconds)  
 DECOHERENCE = 100 - qubits * 2
-
 # Quantum advantage estimation
 ADVANTAGE = 2^qubits (capped at 1M for display)
-
 # FPGA resource usage
 LUTs = qubits * 15 + gates * 3
 FREQ = 50 + qubits * 2.5 + gates * 0.1
