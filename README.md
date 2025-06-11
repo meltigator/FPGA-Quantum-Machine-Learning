@@ -3,32 +3,50 @@
 1. Simulated Quantum Algorithms 
 
 • Grover's Algorithm – for searching unsorted databases 
+
 • Shor's Algorithm – for factoring large numbers 
+
 • Deutsch-Jozsa – to determine if a function is constant or balanced 
+
 • Quantum Fourier Transform – quantum version of Fourier transform 
+
 • Bell States – preparation of entangled states
+
 
 2. Simulated Hardware Components 
 
 • Quantum Gates in Verilog (Hadamard, CNOT, Phase gates) 
+
 • Qubit registers with quantum state representation 
+
 • Quantum randomness using LFSRs to simulate stochastic nature 
+
 • Decoherence simulation – modeling coherence loss 
+
 • Measurement system – wavefunction collapse simulation
+
 
 3. Collected Quantum Metrics 
 
 • Fidelity – quality of quantum simulation 
+
 • Decoherence Time – coherence maintenance time 
+
 • Quantum Advantage – estimated computational benefit 
+
 • Resource Usage – FPGA LUTs and frequency utilization
+
 
 4. Interactive Dashboard 
 
 • Real-time visualization of quantum states 
+
 • Fidelity and performance charts 
+
 • Comparative algorithm analysis 
+
 • Export functionality for results
+
 
 
 🚀 How to Use
