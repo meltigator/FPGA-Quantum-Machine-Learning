@@ -1,6 +1,6 @@
 # 🔮 FPGA Quantum Simulation Features
 
-1. Simulated Quantum Algorithms 
+1. Simulated Quantum Algorithms ✅
 
    • Grover's Algorithm – for searching unsorted databases 
 
@@ -13,7 +13,7 @@
    • Bell States – preparation of entangled states
 
 
-2. Simulated Hardware Components 
+2. Simulated Hardware Components ✅
 
    • Quantum Gates in Verilog (Hadamard, CNOT, Phase gates)
 
@@ -26,7 +26,7 @@
    • Measurement system – wavefunction collapse simulation
 
 
-3. Collected Quantum Metrics 
+3. Collected Quantum Metrics ✅
 
    • Fidelity – quality of quantum simulation 
 
@@ -37,7 +37,7 @@
    • Resource Usage – FPGA LUTs and frequency utilization
 
 
-4. Interactive Dashboard 
+4. Interactive Dashboard ✅
 
    • Real-time visualization of quantum states 
 
