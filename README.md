@@ -141,8 +141,11 @@ The dashboard includes:
 This script, while a quantum simulation, becomes a powerful tool for:
 
  • Academic research in quantum computing 
+ 
 • Education on quantum principles 
+
 • Prototyping quantum algorithms • Benchmarking FPGA performance
+
 
 The FPGA + quantum simulation combo provides the best of both worlds: the flexibility of software with the performance of dedicated hardware.
 
