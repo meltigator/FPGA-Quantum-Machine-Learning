@@ -15,7 +15,7 @@
 
 2. Simulated Hardware Components 
 
-• Quantum Gates in Verilog (Hadamard, CNOT, Phase gates) 
+• Quantum Gates in Verilog (Hadamard, CNOT, Phase gates)
 
 • Qubit registers with quantum state representation 
 
