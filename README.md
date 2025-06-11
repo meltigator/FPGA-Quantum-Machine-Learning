@@ -51,7 +51,7 @@
 
 🚀 How to Use
 
-1.	Save the script as quantum_fpga.sh
+1.	Save the script quantum_fpga_sim.sh
 2.	Run: chmod +x quantum_fpga_sim.sh && ./quantum_fpga_sim.sh
 3.	Choose option 1 for initial setup
 4.	Try quantum algorithms with option 2
@@ -95,7 +95,6 @@ The script also includes simulations for error correction codes:
 
 📊 Advanced Metrics Calculated
 
-bash
 # Fidelity calculation (simulation quality)
 FIDELITY = 0.95 - qubits * 0.01 - gates * 0.001
 
