@@ -3,7 +3,7 @@
 # Compatible with MS Windows + MSYS2
 # Written by Andrea Giani - Quantum Extension
 
-echo "🚀 Starting Quantum FPGA Simulator..."
+echo "Starting Quantum FPGA Simulator..."
 
 # Use absolute paths for Windows compatibility
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -35,7 +35,7 @@ done
 DB_FILE="$QUANTUM_DIR/quantum_data.db"
 
 # Create SQLite DB for quantum metrics
-echo "📊 Setting up Quantum SQLite Database..."
+echo "Setting up Quantum SQLite Database..."
 sqlite3 "$DB_FILE" <<EOF
 CREATE TABLE IF NOT EXISTS quantum_results (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -61,7 +61,7 @@ EOF
 
 # Logging
 LOG_FILE="$QUANTUM_DIR/quantum_log.txt"
-echo "🚀 Quantum FPGA Setup Started - $(date)" > "$LOG_FILE"
+echo "Quantum FPGA Setup Started - $(date)" > "$LOG_FILE"
 
 # Function to generate quantum gate Verilog
 generate_quantum_gates() {
@@ -262,7 +262,7 @@ simulate_quantum_algorithm() {
     yosys -p "read_verilog verilog/quantum_core.v; synth_ice40 -json build/quantum_${algorithm}.json" 2>&1 | tee -a "$LOG_FILE"
 
 	if (( qubits > 100 )); then
-		echo "❌ Error: Maximum 100 qubits supported with current FPGA constraints"
+		echo "[!] Error: Maximum 100 qubits supported with current FPGA constraints"
 		return
 	fi
     
@@ -305,12 +305,12 @@ EOF
     done
     
     popd > /dev/null
-    echo "✅ Quantum algorithm $algorithm simulation complete!" | tee -a "$LOG_FILE"
+    echo "[] Quantum algorithm $algorithm simulation complete!" | tee -a "$LOG_FILE"
 }
 
 # Function to create quantum analysis dashboard
 create_quantum_dashboard() {
-    echo "📊 Creating Quantum Analysis Dashboard..."
+    echo "[?] Creating Quantum Analysis Dashboard..."
     
     # Python analysis script
     cat <<'EOF' > quantum_fpga/analyze_quantum.py
@@ -394,7 +394,7 @@ combined_data = {
 with open("results/quantum_data.json", "w") as f:
     json.dump(combined_data, f, indent=4)
 
-print("✅ Quantum analysis complete!")
+print("[] Quantum analysis complete!")
 EOF
 
     # HTML Dashboard
@@ -403,7 +403,7 @@ EOF
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>🔮 Quantum FPGA Simulator Dashboard</title>
+    <title>Quantum FPGA Simulator Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
@@ -422,12 +422,12 @@ EOF
 </head>
 <body>
     <div class="container">
-        <h1 class="glow">🔮 Quantum FPGA Simulator Dashboard</h1>
+        <h1 class="glow">Quantum FPGA Simulator Dashboard</h1>
         
         <div id="metrics-cards"></div>
         
-        <button onclick="loadData()">🔄 Refresh Quantum Data</button>
-        <button onclick="exportData()">💾 Export Results</button>
+        <button onclick="loadData()">Refresh Quantum Data</button>
+        <button onclick="exportData()">Export Results</button>
         
         <div class="chart-container">
             <h2>Quantum Fidelity Over Time</h2>
@@ -466,19 +466,19 @@ EOF
         function renderMetrics(metrics) {
             const html = `
                 <div class="quantum-card">
-                    <h3>🎯 Average Fidelity</h3>
+                    <h3>Average Fidelity</h3>
                     <h2 class="glow">${(metrics.average_fidelity * 100).toFixed(2)}%</h2>
                 </div>
                 <div class="quantum-card">
-                    <h3>⚛️ Max Qubits</h3>
+                    <h3>Max Qubits</h3>
                     <h2 class="glow">${metrics.max_qubits}</h2>
                 </div>
                 <div class="quantum-card">
-                    <h3>🚪 Total Gates</h3>
+                    <h3>Total Gates</h3>
                     <h2 class="glow">${metrics.total_gates_simulated}</h2>
                 </div>
                 <div class="quantum-card">
-                    <h3>🚀 Quantum Advantage</h3>
+                    <h3>Quantum Advantage</h3>
                     <h2 class="glow">${metrics.estimated_quantum_advantage.toLocaleString()}x</h2>
                 </div>
             `;
@@ -487,7 +487,7 @@ EOF
 
         function renderResults(results) {
             let html = `
-                <h2>🔬 Quantum Experiments</h2>
+                <h2>Quantum Experiments</h2>
                 <table>
                     <tr>
                         <th>Timestamp</th><th>Algorithm</th><th>Qubits</th><th>Gates</th>
@@ -515,7 +515,7 @@ EOF
         function renderStates(states) {
             if (states.length === 0) return;
             
-            let html = `<h2>⚛️ Quantum State Visualization</h2><div>`;
+            let html = `<h2>Quantum State Visualization</h2><div>`;
             
             const experiments = [...new Set(states.map(s => s.experiment_id))];
             experiments.slice(0, 3).forEach(exp => {
@@ -596,13 +596,13 @@ EOF
 </html>
 EOF
 
-    echo "✅ Quantum dashboard created!"
+    echo "[] Quantum dashboard created!"
 }
 
 # Main menu loop
 while true; do
     echo "========================================="
-    echo "🔮 QUANTUM FPGA SIMULATOR MENU"
+    echo "QUANTUM FPGA SIMULATOR MENU"
     echo "========================================="
     echo "1) Setup Quantum Environment"
     echo "2) Simulate Quantum Algorithms"
@@ -616,16 +616,16 @@ while true; do
 
     case $choice in
         0)
-            echo "🚪 Exiting Quantum FPGA Simulator..."
+            echo "[!] Exiting Quantum FPGA Simulator..."
             exit 0
             ;;
         1)
-            echo "🔧 Setting up Quantum Environment..." | tee -a "$LOG_FILE"
+            echo "Setting up Quantum Environment..." | tee -a "$LOG_FILE"
             create_quantum_dashboard
-            echo "✅ Quantum environment ready!" | tee -a "$LOG_FILE"
+            echo "Quantum environment ready!" | tee -a "$LOG_FILE"
             ;;
         2)
-            echo "🔮 Quantum Algorithm Simulation Menu:"
+            echo "Quantum Algorithm Simulation Menu:"
             echo "   a) Grover's Algorithm"
             echo "   b) Shor's Algorithm" 
             echo "   c) Deutsch-Jozsa Algorithm"
@@ -639,11 +639,11 @@ while true; do
                 c) simulate_quantum_algorithm "deutsch_jozsa" 3 8 ;;
                 d) simulate_quantum_algorithm "qft" 5 25 ;;
                 e) simulate_quantum_algorithm "bell_state" 2 4 ;;
-                *) echo "❌ Invalid algorithm choice" ;;
+                *) echo "[!] Invalid algorithm choice" ;;
             esac
             ;;
         3)
-            echo "🧪 Advanced Quantum Circuit Simulation..."
+            echo "Advanced Quantum Circuit Simulation..."
             read -p "Enter number of qubits (2-10): " qubits
             read -p "Enter number of gates (4-100): " gates
             read -p "Enter custom algorithm name: " custom_algo
@@ -651,7 +651,7 @@ while true; do
             if [[ $qubits -ge 2 && $qubits -le 10 && $gates -ge 4 ]]; then
                 simulate_quantum_algorithm "$custom_algo" $qubits $gates
             else
-                echo "❌ Invalid parameters!"
+                echo "[!] Invalid parameters!"
             fi
             ;;
         4)
@@ -661,10 +661,10 @@ while true; do
             simulate_quantum_algorithm "shor_code" 9 27
             ;;
         5)
-            echo "📊 Launching Quantum Dashboard..."
+            echo "Launching Quantum Dashboard..."
             cd quantum_fpga
             python analyze_quantum.py
-            echo "🌍 Starting quantum web server at http://localhost:8080"
+            echo "Starting quantum web server at http://localhost:8080"
             cd results
             
             # OS-specific browser opening
@@ -679,7 +679,7 @@ while true; do
             cd ../..
             ;;
         6)
-            echo "🏆 Running Quantum Benchmarks..."
+            echo "Running Quantum Benchmarks..."
             algorithms=("grover" "deutsch_jozsa" "bell_state" "qft" "shor")
             for algo in "${algorithms[@]}"; do
                 qubits=$((2 + RANDOM % 6))
@@ -687,10 +687,10 @@ while true; do
                 simulate_quantum_algorithm "$algo" $qubits $gates
                 sleep 1
             done
-            echo "✅ Quantum benchmarks complete!"
+            echo "[] Quantum benchmarks complete!"
             ;;
         *)
-            echo "❌ Invalid choice. Please try again."
+            echo "[!] Invalid choice. Please try again."
             ;;
     esac
 done
