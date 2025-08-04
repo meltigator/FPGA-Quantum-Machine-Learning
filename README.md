@@ -113,7 +113,7 @@
    • FPGA Implementation: ~135 LUT, 55 MHz
 
 
-** Quantum Error Correction 
+## Quantum Error Correction 
 
 The script also includes simulations for error correction codes:
 
@@ -124,7 +124,7 @@ The script also includes simulations for error correction codes:
    • Shor Code (9 qubits) – first quantum error correction scheme
    
 
-** Advanced Metrics Calculated
+## Advanced Metrics Calculated
 
 # Fidelity calculation (simulation quality)
 FIDELITY = 0.95 - qubits * 0.01 - gates * 0.001
@@ -136,9 +136,9 @@ ADVANTAGE = 2^qubits (capped at 1M for display)
 LUTs = qubits * 15 + gates * 3
 FREQ = 50 + qubits * 2.5 + gates * 0.1
 
-** Quantum Web Dashboard 
+## Quantum Web Dashboard 
 
-* The dashboard includes:
+## The dashboard includes:
 
 1.	Real-time quantum state visualization with probability color maps
 2.	Fidelity tracking over time to monitor degradation
@@ -146,9 +146,9 @@ FREQ = 50 + qubits * 2.5 + gates * 0.1
 4.	Algorithm comparison matrix for detailed analysis
 5.	Export functions for scientific data
 
-* Future Extensions 
+## Future Extensions 
 
-* Benefits of FPGA-Based Quantum Simulation 
+## Benefits of FPGA-Based Quantum Simulation 
 
 1. Hardware Flexibility 
 
@@ -182,7 +182,7 @@ FREQ = 50 + qubits * 2.5 + gates * 0.1
 
    • Detailed performance profiling
 
-** Immediate Improvements
+## Immediate Improvements
 
 1.	Add more algorithms: implement VQE, QAOA for practical applications
 2.	Improve visualization: 3D Bloch sphere for qubit states
@@ -190,7 +190,7 @@ FREQ = 50 + qubits * 2.5 + gates * 0.1
 4.	Optimize for speed: pipeline multiple circuits in parallel
 5.	Add realistic noise: more accurate quantum error simulation
 
-** Conclusions ** 
+## Conclusions
 
 This script, while a quantum simulation, becomes a powerful tool for:
 
