@@ -1,4 +1,4 @@
-# ***** FPGA Quantum Simulation Features *****
+# FPGA Quantum Simulation Features
 
 1. Simulated Quantum Algorithms 
 
@@ -49,7 +49,7 @@
 
 
 
-*** How to Use ***
+## How to Use
 
 1.	Save the script quantum_fpga_sim.sh
 2.	Run: chmod +x quantum_fpga_sim.sh && ./quantum_fpga_sim.sh
@@ -57,7 +57,7 @@
 4.	Try quantum algorithms with option 2
 5.	View results with option 5
 
-** Interesting Technical Aspects 
+## Interesting Technical Aspects 
 
 
    • Superposition: Simulated via XOR with pseudorandom numbers 
@@ -69,7 +69,7 @@
    • Measurement: Probabilistic state collapse
 
 
-** This approach allows you to: 
+## This approach allows you to: 
 
 
    • Study quantum algorithms on real FPGA hardware 
@@ -83,7 +83,7 @@
    • Prototype quantum circuits before deploying on real quantum hardware
 
 
-** Implemented Algorithms in Detail Grover's Algorithm (4 qubits, 16 gates) 
+## Implemented Algorithms in Detail Grover's Algorithm (4 qubits, 16 gates) 
 
 
    • Application: Search in unstructured databases 
@@ -93,7 +93,7 @@
    • FPGA Implementation: ~60 LUT, 52 MHz
 
 
-** Shor's Algorithm (8 qubits, 64 gates) 
+## Shor's Algorithm (8 qubits, 64 gates) 
 
 
    • Application: Large number factorization 
@@ -103,7 +103,7 @@
    • FPGA Implementation: ~240 LUT, 58 MHz
 
 
-** Quantum Fourier Transform (5 qubits, 25 gates) 
+## Quantum Fourier Transform (5 qubits, 25 gates) 
 
 
    • Application: Core for many quantum algorithms 
